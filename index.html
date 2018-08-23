@@ -148,7 +148,7 @@
                     document.getElementById('identificacion').value="";
                 }else{
                     fondo_cargando.style.transform="scale(1)";
-                    var url = script_url+"?callback=ctrlq&identificacion="+identificacion+"&tipo="+tipo+"&canal="+canal+"&fecha="+fecha+"&monto="+monto+"&nombre="+nombre+"&email="+email+"&action=Insertar";
+                    var url = script_url+"?&identificacion="+identificacion+"&tipo="+tipo+"&canal="+canal+"&fecha="+fecha+"&monto="+monto+"&nombre="+nombre+"&email="+email+"&action=Insertar";
                     console.log(url);
                     var request = new XMLHttpRequest();
                     request.open('GET', url, true);
