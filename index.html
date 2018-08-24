@@ -6,7 +6,7 @@
         <title>Formulario</title>
     </head>
     <body>
-       
+
         <div class="contenedor">
             <div class="contenedor-formulario">
                 <div class="form-group-izquierdo">
@@ -152,10 +152,16 @@
                     console.log(url);
                     var request = new XMLHttpRequest();
                     request.open('GET', url, true);
+
+
+                    
+                    request.setRequestHeader('Access-Control-Allow-Origin','*');
+                    request.setRequestHeader('Access-Control-Allow-Origin','Content-Type','text/plain;charset=UTF-8')
+
                     request.onprogress = function(){
                         fondo_cargando.style.transform="scale(1)";
                     }
-                    request.send();
+                    request.send(url);
                     request.onload = function(){
                         fondo_cargando.style.transform="scale(0)";
                         fondo_exito.style.transform="scale(1)";
@@ -507,4 +513,5 @@
             min-width: 320px;
         }
     }
+</style>
 </style>
