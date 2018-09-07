@@ -101,25 +101,20 @@
             var boton_cancelar = document.getElementById('boton_cancelar');
             var insertar = document.getElementById('btn_enviar');
             var btn_campos = document.getElementById('btn_aceptar_campos');
-            var fecha_total = new Date();
             var fecha = document.getElementById('fecha').disabled = true;
-            function getfecha(){
-                var fdia = fecha_total.toLocaleDateString();
-                var fhora = fecha_total.toLocaleTimeString();
-                var fecha_bd = fdia+' '+fhora;
-                console.log(fecha_bd);
-            }
-            getfecha();
             function tiempo(){
                 var fecha = new Date();
                 var dia = fecha.getDate();
+                if(dia<10){
+                    var diaDef = "0"+dia;
+                }
                 var mes = fecha.getMonth();
                 var mesMostrar = mes+1;
                 if(mesMostrar<10){
                     var mesDef = "0"+mesMostrar;
                 }
                 var ano = fecha.getFullYear();
-                document.getElementById('fecha').value=ano+"-"+mesDef+"-"+dia;
+                document.getElementById('fecha').value=ano+"-"+mesDef+"-"+diaDef;
             }
             tiempo();
             boton_cancelar.addEventListener('click',function(){
