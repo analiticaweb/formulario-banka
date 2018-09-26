@@ -103,18 +103,18 @@
             var btn_campos = document.getElementById('btn_aceptar_campos');
             var fecha = document.getElementById('fecha').disabled = true;
             function tiempo(){
-                var fecha = new Date();
-                var dia = fecha.getDate();
+                var date = new Date();
+                var dia = date.getDate();
                 if(dia<10){
-                    var diaDef = "0"+dia;
+                    var dia = "0"+dia;
                 }
-                var mes = fecha.getMonth();
+                var mes = date.getMonth();
                 var mesMostrar = mes+1;
                 if(mesMostrar<10){
-                    var mesDef = "0"+mesMostrar;
+                    var mesMostrar = "0"+mesMostrar;
                 }
-                var ano = fecha.getFullYear();
-                document.getElementById('fecha').value=ano+"-"+mesDef+"-"+diaDef;
+                var ano = date.getFullYear();
+                document.getElementById('fecha').value=ano+"-"+mesMostrar+"-"+dia;
             }
             tiempo();
             boton_cancelar.addEventListener('click',function(){
